@@ -4,7 +4,8 @@
   "description": "Nodejs Weather App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Belchenkov/weather_node_wfm/issues"
   },
-  "homepage": "https://github.com/Belchenkov/weather_node_wfm#readme"
+  "homepage": "https://github.com/Belchenkov/weather_node_wfm#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
