@@ -1,7 +1,12 @@
 const rp = require('request-promise');
 
 module.exports = async function (city = '') {
-    if (!city)  throw new Error('Следует указать город');
+    if (!city)  {
+        return {
+            weather: null,
+            error: 'Следует указать город'
+        };
+    };
 
     const KEY = '13d2715194db160d5dd4a18f5a8a8bb5';
     const uri = 'http://api.openweathermap.org/data/2.5/weather';

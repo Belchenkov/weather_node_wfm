@@ -16,16 +16,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {
+        weather: null,
+        error: null
+    });
 });
 
 app.post('/', async (req, res) => {
     const {city} = req.body;
-
     const {weather, error} = await weatherRequest(city);
 
-    console.log(weather);
-    res.render('index');
+    res.render('index', {
+        weather,
+        error
+    });
 });
 
 const PORT = process.env.PORT || 3000;
